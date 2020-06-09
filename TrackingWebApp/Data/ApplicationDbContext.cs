@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -27,7 +28,19 @@ namespace TrackingWebApp.Data
                 {
                     Name = "User",
                     NormalizedName = "USER"
-                });
+                }
+             );
+            builder.Entity<TrackingApp.Models.Project>()
+                .HasData(
+
+                new TrackingApp.Models.Project
+                {
+                    Id = 1,
+                    Title = "Roof",
+                    Mileage = 50,
+                    Budget = 1000,
+                    BudgetUsed = 500
+                }); ;
         }
 
         public DbSet<TrackingApp.Models.Project> Projects {get; set;}

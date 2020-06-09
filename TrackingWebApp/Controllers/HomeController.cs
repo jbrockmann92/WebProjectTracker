@@ -20,7 +20,7 @@ namespace TrackingWebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Projects");
         }
 
         public IActionResult Privacy()
