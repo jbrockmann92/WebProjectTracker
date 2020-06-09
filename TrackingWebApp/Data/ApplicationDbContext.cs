@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using ProjectAPI.Models;
+using TrackingApp.Models;
 
 namespace TrackingWebApp.Data
 {
@@ -26,5 +29,16 @@ namespace TrackingWebApp.Data
                     NormalizedName = "USER"
                 });
         }
+
+        public DbSet<TrackingApp.Models.Project> Projects {get; set;}
+        public DbSet<Expense> Expenses { get; set; }
+
+        public DbSet<HoursSpent> HoursSpent { get; set; }
+
+        public DbSet<Note> Notes { get; set; }
+
+        public DbSet<Receipt> Receipts { get; set; }
+
+
     }
 }
