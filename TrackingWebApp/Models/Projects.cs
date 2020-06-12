@@ -19,5 +19,6 @@ namespace TrackingApp.Models
         public List<HoursSpent> HoursSpent { get; set; }
         public List<Receipt> Receipts { get; set; }
         public List<Note> Notes { get; set; }
+        public string UserId { get; set; }
     }
 }
