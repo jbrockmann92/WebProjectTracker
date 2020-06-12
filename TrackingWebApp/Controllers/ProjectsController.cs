@@ -23,7 +23,8 @@ namespace TrackingWebApp.Controllers
         // GET: Projects
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Projects.ToListAsync());
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return View(await _context.Projects.Where(p => p.UserId == userId).ToListAsync());
         }
 
         // GET: Projects/Details/5
